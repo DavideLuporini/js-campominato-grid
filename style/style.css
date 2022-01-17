@@ -6,3 +6,21 @@
 .classeb div {
     border: 2px solid dodgerblue;
 }
+
+.celleasy {
+    height: 30px;
+    display: inline-flex;
+    margin: 5px;
+}
+
+.cellnormal {
+    height: 30px;
+    display: inline-flex;
+    margin: 5px;
+}
+
+.cellhard {
+    height: 30px;
+    display: inline-flex;
+    margin: 5px;
+}

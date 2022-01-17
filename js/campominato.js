@@ -41,17 +41,7 @@ const selectDifficultyEasy = document.getElementById('easy');
 const selectDifficultyNormal = document.getElementById('normal');
 const selectDifficultyHard = document.getElementById('hard');
 const startGame = document.getElementById('play');
-
-let cells = 8;
-let columns = 8;
-let totalCells = cells * columns;
-
-console.log(cells)
-console.log(columns)
-console.log(totalCells)
-
-
-
+const grid = document.getElementById('grid')
 
 // dichiaro numeri per difficoltà
 const numberEasy = getRandomNumber(1, 100);
@@ -62,6 +52,41 @@ const numberHard = getRandomNumber(1, 49);
 console.log(numberEasy);
 console.log(numberNormal);
 console.log(numberHard);
+
+// dichiaro le dimensioni griglia
+
+console.log(cells)
+console.log(columns)
+console.log(totalCells)
+
+
+// funzione che crea le celle
+
+function nome(argomenti) {
+    // istruzioni
+}
+
+function getCells(columns, cells, totalCells) {
+
+    let cells = 0;
+    let totalCells = cells * columns;
+    let columns = 10
+    for (i = 0; i <= totalCells; i++) {
+        const cell = document.createElement('div');
+        cell.className = 'celleasy col-2';
+
+        grid.appendChild(cell)
+    }
+}
+
+
+let numeberofcells = getCells(10, 10);
+console.log(numeberofcells)
+
+console.log(cells)
+console.log(columns)
+console.log(totalCells)
+
 
 
 // evento sul click in easy
