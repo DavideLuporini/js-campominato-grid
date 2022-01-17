@@ -14,33 +14,65 @@ console.log('js ok')
 // Proviamo sempre prima con dei console.log() per capire se stiamo ricevendo i dati giusti.
 // Le validazioni e i controlli possiamo farli anche in un secondo momento.
 
-// cosa mi serve?
-
-// 1) far indicare il livello di difficoltà all'user
-// 2)sviluppare la griglia
-
-
-// come dati input dall'utente ---> scelta difficoltà è click sulle celle 
-
-// cosa fare sotto banco? in base alla difficoltà eseguire un sistema di generazione celle o un'altro
-
-
-// celle:
-// funzione che mi generi le celle
-// creare tramite la funzione i div che dovranno avere classe per colorarsi di blu
-// FINE COMMENTI
-
 
 // funzioni
 // calcolo un numero casuale 
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
+// funzione per creare le celle
+function getCells(index) {
+    const cell = document.createElement('div');
+    cell.className = 'col-2';
+    grid.appendChild(cell);
+    cell.setAttribute('id', index + 1);
+
+
+    return cell;
+}
+
+// function getEasy(index) {;
+//     cell.className = 'celleasy col-2 ';
+//     grid.appendChild(cell);
+//     cell.setAttribute('id', index + 1);
+
+
+//     return cell;
+// }
+
+// function getMedium(index) {;
+//     cell.className = 'cellnormal col-2 ';
+//     grid.appendChild(cell);
+//     cell.setAttribute('id', index + 1);
+
+
+//     return cell;
+// }
+
+// function gethard(index) {;
+//     cell.className = 'cellhard col-2 ';
+//     grid.appendChild(cell);
+//     cell.setAttribute('id', index + 1);
+
+
+//     return cell;
+// }
+
+// cella selezionata
+function getColoredCells(totalCells) {
+    for (let i = 0; i < totalCells; i++) {
+        const cell = getCells(i);
+        cell.addEventListener('click', function() {
+            cell.classList.toggle('bg-lightblue');
+        })
+    }
+}
 
 
 // VARIABILI
 const selectDifficultyEasy = document.getElementById('easy');
 const selectDifficultyNormal = document.getElementById('normal');
 const selectDifficultyHard = document.getElementById('hard');
-const startGame = document.getElementById('play');
+const resetGame = document.getElementById('reset');
 const grid = document.getElementById('grid')
 
 // dichiaro numeri per difficoltà
@@ -49,47 +81,26 @@ const numberNormal = getRandomNumber(1, 81);
 const numberHard = getRandomNumber(1, 49);
 
 
-console.log(numberEasy);
-console.log(numberNormal);
-console.log(numberHard);
-
-// dichiaro le dimensioni griglia
-
-console.log(cells)
-console.log(columns)
-console.log(totalCells)
-
-
-// funzione che crea le celle
-
-function nome(argomenti) {
-    // istruzioni
-}
-
-function getCells(columns, cells, totalCells) {
-
-    let cells = 0;
-    let totalCells = cells * columns;
-    let columns = 10
-    for (i = 0; i <= totalCells; i++) {
-        const cell = document.createElement('div');
-        cell.className = 'celleasy col-2';
-
-        grid.appendChild(cell)
-    }
-}
-
-
-let numeberofcells = getCells(10, 10);
-console.log(numeberofcells)
-
-console.log(cells)
-console.log(columns)
-console.log(totalCells)
-
-
-
 // evento sul click in easy
 selectDifficultyEasy.addEventListener('click', function() {
+        grid.innerHTML = '';
+        getColoredCells(100);
+        cell.classList.add("celleasy")
+    })
+    // evento sul click in medium
+selectDifficultyNormal.addEventListener('click', function() {
+        grid.innerHTML = '';
+        getColoredCells(81);
+        cell.classList.add("cellnormal")
+    })
+    // evento sul click in hard
+selectDifficultyHard.addEventListener('click', function() {
+    grid.innerHTML = '';
+    getColoredCells(49);
+    cell.className = 'cellhard'
 
+})
+
+resetGame.addEventListener('click', function() {
+    grid.innerHTML = "";
 })

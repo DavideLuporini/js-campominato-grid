@@ -1,6 +1,7 @@
 .classeb {
     border: 2px solid blue;
-    height: 660px;
+    height: 600px;
+    margin-top: 50px;
 }
 
 .classeb div {
@@ -8,19 +9,23 @@
 }
 
 .celleasy {
-    height: 30px;
+    height: calc(100% /10);
+    width: calc(100% /10);
     display: inline-flex;
-    margin: 5px;
 }
 
 .cellnormal {
-    height: 30px;
+    height: calc(100% /9);
+    width: calc(100% /9);
     display: inline-flex;
-    margin: 5px;
 }
 
 .cellhard {
-    height: 30px;
+    height: calc(100% /5);
+    width: calc(50% /5);
     display: inline-flex;
-    margin: 5px;
+}
+
+.bg-lightblue {
+    background-color: blue;
 }
