@@ -7,7 +7,6 @@
 
 .classeb div {
     border: 2px solid #65DB94;
-    ;
     cursor: pointer;
 }
 
@@ -31,6 +30,7 @@
 
 .bg-lightblue {
     background-color: #65DB94;
+    color: #2A5C3E;
 }
 
 .bg-green {
@@ -51,4 +51,8 @@
 
 .bgc-grid {
     background-color: #239452;
+}
+
+.textlight-green {
+    color: #65DB94;
 }
