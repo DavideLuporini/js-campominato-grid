@@ -57,3 +57,9 @@
 .textlight-green {
     color: #65DB94;
 }
+
+.classeb div:hover {
+    background-color: #65DB94;
+    color: #2A5C3E;
+    border: 3px solid #465C4F;
+}
