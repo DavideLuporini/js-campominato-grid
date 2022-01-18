@@ -22,51 +22,35 @@ const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)
 // funzione per creare le celle
 function getCells(index) {
     const cell = document.createElement('div');
-    cell.className = 'col-2';
+    cell.className = 'col-auto align-items-center justify-content-center';
     grid.appendChild(cell);
     cell.setAttribute('id', index + 1);
+    cell.innerText = cell.id;
 
 
     return cell;
 }
 
-// function getEasy(index) {;
-//     cell.className = 'celleasy col-2 ';
-//     grid.appendChild(cell);
-//     cell.setAttribute('id', index + 1);
 
-
-//     return cell;
-// }
-
-// function getMedium(index) {;
-//     cell.className = 'cellnormal col-2 ';
-//     grid.appendChild(cell);
-//     cell.setAttribute('id', index + 1);
-
-
-//     return cell;
-// }
-
-// function gethard(index) {;
-//     cell.className = 'cellhard col-2 ';
-//     grid.appendChild(cell);
-//     cell.setAttribute('id', index + 1);
-
-
-//     return cell;
-// }
 
 // cella selezionata
-function getColoredCells(totalCells) {
+function getColoredCells(totalCells, mode) {
     for (let i = 0; i < totalCells; i++) {
         const cell = getCells(i);
+        cell.classList.add(mode);
         cell.addEventListener('click', function() {
             cell.classList.toggle('bg-lightblue');
         })
     }
 }
 
+// funzione per definire livello di difficoltà
+function setMode(diff) {
+    let result;
+    if (diff === 0) return result = 'celleasy';
+    else if (diff === 1) return result = 'cellnormal';
+    else return result = 'cellhard';
+}
 
 // VARIABILI
 const selectDifficultyEasy = document.getElementById('easy');
@@ -84,20 +68,17 @@ const numberHard = getRandomNumber(1, 49);
 // evento sul click in easy
 selectDifficultyEasy.addEventListener('click', function() {
         grid.innerHTML = '';
-        getColoredCells(100);
-        cell.classList.add("celleasy")
+        getColoredCells(100, 'celleasy');
     })
     // evento sul click in medium
 selectDifficultyNormal.addEventListener('click', function() {
         grid.innerHTML = '';
-        getColoredCells(81);
-        cell.classList.add("cellnormal")
+        getColoredCells(81, 'cellnormal');
     })
     // evento sul click in hard
 selectDifficultyHard.addEventListener('click', function() {
     grid.innerHTML = '';
-    getColoredCells(49);
-    cell.className = 'cellhard'
+    getColoredCells(49, 'cellhard');
 
 })
 

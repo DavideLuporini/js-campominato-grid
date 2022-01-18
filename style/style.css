@@ -1,11 +1,14 @@
 .classeb {
-    border: 2px solid blue;
-    height: 600px;
     margin-top: 50px;
+    height: 550px;
+    width: 550px;
+    padding: 0;
 }
 
 .classeb div {
-    border: 2px solid dodgerblue;
+    border: 2px solid #65DB94;
+    ;
+    cursor: pointer;
 }
 
 .celleasy {
@@ -21,11 +24,31 @@
 }
 
 .cellhard {
-    height: calc(100% /5);
-    width: calc(50% /5);
+    height: calc(100% /7);
+    width: calc(100% /7);
     display: inline-flex;
 }
 
 .bg-lightblue {
-    background-color: blue;
+    background-color: #65DB94;
+}
+
+.bg-green {
+    background-color: #465C4F;
+}
+
+.bg-darkgreen {
+    background-color: #2A5C3E;
+}
+
+.btn-green {
+    background-color: #65DB94;
+}
+
+.btn-reset {
+    background-color: #c22e26;
+}
+
+.bgc-grid {
+    background-color: #239452;
 }
