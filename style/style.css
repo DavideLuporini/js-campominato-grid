@@ -3,6 +3,7 @@
     height: 550px;
     width: 550px;
     padding: 0;
+    border: black 2px solid;
 }
 
 .classeb div {
