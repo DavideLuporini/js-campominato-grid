@@ -25,7 +25,7 @@ function getCells(index) {
     cell.className = 'col-auto align-items-center justify-content-center';
     grid.appendChild(cell);
     cell.setAttribute('id', index + 1);
-    cell.innerText = cell.id;
+    cell.innerHTML = "<span class=cursor>" + cell.id + "</span>";
 
 
     return cell;
@@ -42,14 +42,6 @@ function getColoredCells(totalCells, mode) {
             cell.classList.toggle('bg-lightblue');
         })
     }
-}
-
-// funzione per definire livello di difficoltà
-function setMode(diff) {
-    let result;
-    if (diff === 0) return result = 'celleasy';
-    else if (diff === 1) return result = 'cellnormal';
-    else return result = 'cellhard';
 }
 
 // VARIABILI

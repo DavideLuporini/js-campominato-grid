@@ -55,3 +55,9 @@
     color: #2A5C3E;
     border: 3px solid #465C4F;
 }
+
+.cursor {
+    cursor: pointer;
+    border: none;
+    user-select: none;
+}
